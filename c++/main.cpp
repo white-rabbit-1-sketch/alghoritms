@@ -8,15 +8,15 @@ const int NODES_COUNT = 10;
 
 int main() 
 {
-    LinkedList linkedList = LinkedList();
-    LinkedListNode *linkedListNode;
+    LinkedList<string> linkedList;
+    LinkedListNode<string> *linkedListNode;
 
     for (int i = 0; i < NODES_COUNT; i++) {
-        linkedListNode = new LinkedListNode("Node #" + to_string(i));
+        linkedListNode = new LinkedListNode<string>("Node #" + to_string(i));
         linkedList.append(*linkedListNode);
     }
 
-    LinkedListNode *currentNode = linkedList.getFirstNode();
+    LinkedListNode<string> *currentNode = linkedList.getFirstNode();
     while (currentNode) {
         cout << currentNode->getValue() << endl;
         currentNode = currentNode->getNext();

@@ -1,21 +1,25 @@
 #include "LinkedListNode.hpp"
 
-LinkedListNode::LinkedListNode(string value) 
+template <typename NodeValueType>
+LinkedListNode<NodeValueType>::LinkedListNode(NodeValueType value) 
 {
     this->value = value;
 }
 
-string LinkedListNode::getValue() const
+template <typename NodeValueType>
+NodeValueType LinkedListNode<NodeValueType>::getValue() const
 {
     return this->value;
 }
 
-LinkedListNode *LinkedListNode::getNext() const
+template <typename NodeValueType>
+LinkedListNode<NodeValueType> *LinkedListNode<NodeValueType>::getNext() const
 {
     return this->next;
 }
 
-void LinkedListNode::setNext(LinkedListNode &node)
+template <typename NodeValueType>
+void LinkedListNode<NodeValueType>::setNext(LinkedListNode &node)
 {
     this->next = &node;
 }

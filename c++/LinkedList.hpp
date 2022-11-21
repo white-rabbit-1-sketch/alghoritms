@@ -3,15 +3,16 @@
 
 #include "LinkedListNode.hpp"
 
+template <typename NodeValueType>
 class LinkedList {
     protected:
-        LinkedListNode *firstNode;
-        LinkedListNode *lastNode;
+        LinkedListNode<NodeValueType> *firstNode;
+        LinkedListNode<NodeValueType> *lastNode;
 
     public:
-        void append(LinkedListNode &node);
-        LinkedListNode *getFirstNode() const;
-        LinkedListNode *getLastNode() const;
+        void append(LinkedListNode<NodeValueType> &node);
+        LinkedListNode<NodeValueType> *getFirstNode() const;
+        LinkedListNode<NodeValueType> *getLastNode() const;
 };
 
 #endif

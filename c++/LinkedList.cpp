@@ -1,6 +1,7 @@
 #include "LinkedList.hpp"
 
-void LinkedList::append(LinkedListNode &node)
+template <typename NodeValueType>
+void LinkedList<NodeValueType>::append(LinkedListNode<NodeValueType> &node)
 {
     if (!this->firstNode) {
         this->firstNode = &node;
@@ -13,12 +14,14 @@ void LinkedList::append(LinkedListNode &node)
     this->lastNode = &node;
 }
 
-LinkedListNode *LinkedList::getFirstNode() const
+template <typename NodeValueType>
+LinkedListNode<NodeValueType> *LinkedList<NodeValueType>::getFirstNode() const
 {
     return this->firstNode;
 }
 
-LinkedListNode *LinkedList::getLastNode() const
+template <typename NodeValueType>
+LinkedListNode<NodeValueType> *LinkedList<NodeValueType>::getLastNode() const
 {
     return this->lastNode;
 }

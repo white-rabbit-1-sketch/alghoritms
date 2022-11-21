@@ -5,15 +5,16 @@
 
 using namespace std;
 
+template <typename NodeValueType>
 class LinkedListNode 
 {
     protected:
         LinkedListNode *next;
-        string value;
+        NodeValueType value;
 
     public:
-        LinkedListNode(string value);
-        string getValue() const;
+        explicit LinkedListNode(NodeValueType value);
+        NodeValueType getValue() const;
         LinkedListNode *getNext() const;
         void setNext(LinkedListNode &node);
 };
