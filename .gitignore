@@ -1,2 +1,4 @@
-build/*
+c/build/*
+c++/build/*
 .idea
+.vscode

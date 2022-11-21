@@ -6,7 +6,7 @@ void LinkedList<NodeValueType>::append(LinkedListNode<NodeValueType> &node)
     if (!this->firstNode) {
         this->firstNode = &node;
     }
-    
+
     if (this->lastNode) {
         this->lastNode->setNext(node);
     }

@@ -6,13 +6,15 @@
 template <typename NodeValueType>
 class LinkedList {
     protected:
-        LinkedListNode<NodeValueType> *firstNode;
-        LinkedListNode<NodeValueType> *lastNode;
+        LinkedListNode<NodeValueType> *firstNode = nullptr;
+        LinkedListNode<NodeValueType> *lastNode = nullptr;
 
     public:
         void append(LinkedListNode<NodeValueType> &node);
         LinkedListNode<NodeValueType> *getFirstNode() const;
         LinkedListNode<NodeValueType> *getLastNode() const;
 };
+
+#include "LinkedList.cpp"
 
 #endif

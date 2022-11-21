@@ -9,7 +9,7 @@ template <typename NodeValueType>
 class LinkedListNode 
 {
     protected:
-        LinkedListNode *next;
+        LinkedListNode *next = nullptr;
         NodeValueType value;
 
     public:
@@ -18,5 +18,7 @@ class LinkedListNode
         LinkedListNode *getNext() const;
         void setNext(LinkedListNode &node);
 };
+
+#include "LinkedListNode.cpp"
 
 #endif
