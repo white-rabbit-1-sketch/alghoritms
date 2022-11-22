@@ -1,30 +1,12 @@
 #include "LinkedList.hpp"
 
 namespace alg {
-    template <typename NodeValueType>
-    void DoublyLinkedList<NodeValueType>::append(DoublyLinkedListNode<NodeValueType> &node)
+    template <typename DoublyLinkedListNodeType>
+    void DoublyLinkedList<DoublyLinkedListNodeType>::append(DoublyLinkedListNodeType &node)
     {
-        if (!this->firstNode) {
-            this->firstNode = &node;
-        }
+        LinkedList<DoublyLinkedListNodeType>::append(node);
 
-        if (this->lastNode) {
-            this->lastNode->setNext(node);
-            node.setPrevious(*(this->lastNode));
-        }
-
-        this->lastNode = &node;
-    }
-
-    template <typename NodeValueType>
-    DoublyLinkedListNode<NodeValueType> *DoublyLinkedList<NodeValueType>::getFirstNode() const
-    {
-        return this->firstNode;
-    }
-
-    template <typename NodeValueType>
-    DoublyLinkedListNode<NodeValueType> *DoublyLinkedList<NodeValueType>::getLastNode() const
-    {
-        return this->lastNode;
+        DoublyLinkedListNodeType *currentLastNode = this->lastNode;
+        node.setPrevious(*(currentLastNode));
     }
 }

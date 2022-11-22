@@ -4,16 +4,16 @@
 #include "LinkedListNode.hpp"
 
 namespace alg {
-    template <typename NodeValueType>
+    template <typename LinkedListNodeType>
     class LinkedList {
         protected:
-            LinkedListNode<NodeValueType> *firstNode = nullptr;
-            LinkedListNode<NodeValueType> *lastNode = nullptr;
+            LinkedListNodeType *firstNode = nullptr;
+            LinkedListNodeType *lastNode = nullptr;
 
         public:
-            void append(LinkedListNode<NodeValueType> &node);
-            LinkedListNode<NodeValueType> *getFirstNode() const;
-            LinkedListNode<NodeValueType> *getLastNode() const;
+            virtual void append(LinkedListNodeType &node);
+            virtual LinkedListNodeType *getFirstNode() const final;
+            virtual LinkedListNodeType *getLastNode() const final;
     };
 }
 

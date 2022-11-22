@@ -11,7 +11,7 @@ const int NODES_COUNT = 10;
 
 int main() 
 {
-    LinkedList<string> linkedList;
+    LinkedList<LinkedListNode<string>> linkedList;
     LinkedListNode<string> *linkedListNode = nullptr;
 
     for (int i = 0; i < NODES_COUNT; i++) {
@@ -25,7 +25,7 @@ int main()
         currentLinkedListNode = currentLinkedListNode->getNext();
     }
 
-    DoublyLinkedList<string> doublyLinkedList;
+    DoublyLinkedList<DoublyLinkedListNode<string>> doublyLinkedList;
     DoublyLinkedListNode<string> *doublyLinkedListNode = nullptr;
 
     for (int i = 0; i < NODES_COUNT; i++) {

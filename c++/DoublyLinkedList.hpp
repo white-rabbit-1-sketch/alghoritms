@@ -5,17 +5,11 @@
 #include "DoublyLinkedListNode.hpp"
 
 namespace alg {
-    template <typename NodeValueType>
-    class DoublyLinkedList: public LinkedList<NodeValueType>
+    template <typename DoublyLinkedListNodeType>
+    class DoublyLinkedList: public LinkedList <DoublyLinkedListNodeType>
     {
-        protected:
-            DoublyLinkedListNode<NodeValueType> *firstNode = nullptr;
-            DoublyLinkedListNode<NodeValueType> *lastNode = nullptr;
-
         public:
-            void append(DoublyLinkedListNode<NodeValueType> &node);
-            DoublyLinkedListNode<NodeValueType> *getFirstNode() const;
-            DoublyLinkedListNode<NodeValueType> *getLastNode() const;
+            void append(DoublyLinkedListNodeType &node) override;
     };
 }
 
