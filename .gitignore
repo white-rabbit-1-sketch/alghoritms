@@ -1,4 +1,6 @@
 c/build/*
+!c/build/.gitkeep
 c++/build/*
+!c++/build/.gitkeep
 .idea
 .vscode

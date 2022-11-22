@@ -5,19 +5,21 @@
 
 using namespace std;
 
-template <typename NodeValueType>
-class LinkedListNode 
-{
-    protected:
-        LinkedListNode *next = nullptr;
-        NodeValueType value;
+namespace alg {
+    template <typename NodeValueType>
+    class LinkedListNode 
+    {
+        protected:
+            LinkedListNode *next = nullptr;
+            NodeValueType value;
 
-    public:
-        explicit LinkedListNode(NodeValueType value);
-        NodeValueType getValue() const;
-        LinkedListNode *getNext() const;
-        void setNext(LinkedListNode &node);
-};
+        public:
+            explicit LinkedListNode(NodeValueType value);
+            NodeValueType getValue() const;
+            LinkedListNode *getNext() const;
+            void setNext(LinkedListNode &node);
+    };
+}
 
 #include "LinkedListNode.cpp"
 
