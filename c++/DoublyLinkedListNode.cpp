@@ -2,7 +2,7 @@
 
 namespace alg {
     template <typename NodeValueType>
-    DoublyLinkedListNode<NodeValueType>::DoublyLinkedListNode(NodeValueType value): LinkedListNode<NodeValueType>(value)
+    DoublyLinkedListNode<NodeValueType>::DoublyLinkedListNode(NodeValueType value)
     {
         this->value = value;
     }
@@ -12,7 +12,19 @@ namespace alg {
     {
         return this->value;
     }
-    
+
+    template <typename NodeValueType>
+    DoublyLinkedListNode<NodeValueType> *DoublyLinkedListNode<NodeValueType>::getNext()  const
+    {
+        return this->next;
+    }
+
+    template <typename NodeValueType>
+    void DoublyLinkedListNode<NodeValueType>::setNext(DoublyLinkedListNode *node)
+    {
+        this->next = node;
+    }
+
     template <typename NodeValueType>
     DoublyLinkedListNode<NodeValueType> *DoublyLinkedListNode<NodeValueType>::getPrevious() const
     {
@@ -23,17 +35,5 @@ namespace alg {
     void DoublyLinkedListNode<NodeValueType>::setPrevious(DoublyLinkedListNode &node)
     {
         this->previous = &node;
-    }
-
-    template <typename NodeValueType>
-    DoublyLinkedListNode<NodeValueType> *DoublyLinkedListNode<NodeValueType>::getNext() const
-    {
-        return this->next;
-    }
-
-    template <typename NodeValueType>
-    void DoublyLinkedListNode<NodeValueType>::setNext(DoublyLinkedListNode &node)
-    {
-        this->next = &node;
     }
 }

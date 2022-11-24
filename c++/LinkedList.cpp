@@ -9,7 +9,7 @@ namespace alg {
         }
 
         if (this->lastNode) {
-            this->lastNode->setNext(node);
+            this->lastNode->setNext(&node);
         }
 
         this->lastNode = &node;

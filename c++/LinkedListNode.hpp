@@ -15,9 +15,9 @@ namespace alg {
 
         public:
             explicit LinkedListNode(NodeValueType value);
-            NodeValueType getValue() const;
-            LinkedListNode *getNext() const;
-            void setNext(LinkedListNode &node);
+            virtual NodeValueType getValue() const;
+            virtual LinkedListNode *getNext() const;
+            virtual void setNext(LinkedListNode *node);
     };
 }
 

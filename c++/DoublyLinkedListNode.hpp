@@ -8,19 +8,20 @@ using namespace std;
 
 namespace alg {
     template <typename NodeValueType>
-    class DoublyLinkedListNode: public LinkedListNode<NodeValueType>
+    class DoublyLinkedListNode
     {
         protected:
             DoublyLinkedListNode *next = nullptr;
             DoublyLinkedListNode *previous = nullptr;
+            NodeValueType value;
 
         public:
             explicit DoublyLinkedListNode(NodeValueType value);
-            NodeValueType getValue() const;
-            DoublyLinkedListNode *getPrevious() const;
-            void setPrevious(DoublyLinkedListNode &node);
-            DoublyLinkedListNode *getNext() const;
-            void setNext(DoublyLinkedListNode &node);
+            virtual NodeValueType getValue() const;
+            virtual DoublyLinkedListNode *getNext() const;
+            virtual void setNext(DoublyLinkedListNode *node);
+            virtual DoublyLinkedListNode *getPrevious() const;
+            virtual void setPrevious(DoublyLinkedListNode &node);
     };
 }
 

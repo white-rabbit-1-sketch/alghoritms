@@ -20,8 +20,8 @@ namespace alg {
     }
 
     template <typename NodeValueType>
-    void LinkedListNode<NodeValueType>::setNext(LinkedListNode &node)
+    void LinkedListNode<NodeValueType>::setNext(LinkedListNode *node)
     {
-        this->next = &node;
+        this->next = node;
     }
 }

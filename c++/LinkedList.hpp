@@ -12,8 +12,8 @@ namespace alg {
 
         public:
             virtual void append(LinkedListNodeType &node);
-            virtual LinkedListNodeType *getFirstNode() const final;
-            virtual LinkedListNodeType *getLastNode() const final;
+            virtual LinkedListNodeType *getFirstNode() const;
+            virtual LinkedListNodeType *getLastNode() const;
     };
 }
 

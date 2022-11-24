@@ -4,3 +4,4 @@ c++/build/*
 !c++/build/.gitkeep
 .idea
 .vscode
+.DS_Store
