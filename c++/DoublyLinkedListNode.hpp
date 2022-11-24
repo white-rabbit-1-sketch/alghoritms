@@ -2,7 +2,6 @@
 #define DOUBLY_LINKED_LIST_NODE_H
 
 #include <string>
-#include "LinkedListNode.hpp"
 
 using namespace std;
 

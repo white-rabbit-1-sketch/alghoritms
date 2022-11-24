@@ -2,12 +2,28 @@
 
 namespace alg {
     template <typename DoublyLinkedListNodeType>
-    void DoublyLinkedList<DoublyLinkedListNodeType>::append(DoublyLinkedListNodeType &node)
+    void DoublyLinkedList<DoublyLinkedListNodeType>::append(DoublyLinkedListNode<DoublyLinkedListNodeType> &node)
     {
-        DoublyLinkedListNodeType *currentLastNode = this->lastNode;
+        if (!this->firstNode) {
+            this->firstNode = &node;
+        }
 
-        LinkedList<DoublyLinkedListNodeType>::append(node);
+        if (this->lastNode) {
+            this->lastNode->setNext(&node);
+        }
 
-        node.setPrevious(*(currentLastNode));
+        this->lastNode = &node;
+    }
+
+    template <typename DoublyLinkedListNodeType>
+    DoublyLinkedListNode<DoublyLinkedListNodeType> *DoublyLinkedList<DoublyLinkedListNodeType>::getFirstNode() const
+    {
+        return this->firstNode;
+    }
+
+    template <typename DoublyLinkedListNodeType>
+    DoublyLinkedListNode<DoublyLinkedListNodeType> *DoublyLinkedList<DoublyLinkedListNodeType>::getLastNode() const
+    {
+        return this->lastNode;
     }
 }

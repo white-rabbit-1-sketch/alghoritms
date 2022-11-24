@@ -7,13 +7,13 @@ namespace alg {
     template <typename LinkedListNodeType>
     class LinkedList {
         protected:
-            LinkedListNodeType *firstNode = nullptr;
-            LinkedListNodeType *lastNode = nullptr;
+            LinkedListNode<LinkedListNodeType> *firstNode = nullptr;
+            LinkedListNode<LinkedListNodeType> *lastNode = nullptr;
 
         public:
-            virtual void append(LinkedListNodeType &node);
-            virtual LinkedListNodeType *getFirstNode() const;
-            virtual LinkedListNodeType *getLastNode() const;
+            virtual void append(LinkedListNode<LinkedListNodeType> &node);
+            virtual LinkedListNode<LinkedListNodeType> *getFirstNode() const;
+            virtual LinkedListNode<LinkedListNodeType> *getLastNode() const;
     };
 }
 

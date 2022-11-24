@@ -2,7 +2,7 @@
 
 namespace alg {
     template <typename LinkedListNodeType>
-    void LinkedList<LinkedListNodeType>::append(LinkedListNodeType &node)
+    void LinkedList<LinkedListNodeType>::append(LinkedListNode<LinkedListNodeType> &node)
     {
         if (!this->firstNode) {
             this->firstNode = &node;
@@ -16,13 +16,13 @@ namespace alg {
     }
 
     template <typename LinkedListNodeType>
-    LinkedListNodeType *LinkedList<LinkedListNodeType>::getFirstNode() const
+    LinkedListNode<LinkedListNodeType> *LinkedList<LinkedListNodeType>::getFirstNode() const
     {
         return this->firstNode;
     }
 
     template <typename LinkedListNodeType>
-    LinkedListNodeType *LinkedList<LinkedListNodeType>::getLastNode() const
+    LinkedListNode<LinkedListNodeType> *LinkedList<LinkedListNodeType>::getLastNode() const
     {
         return this->lastNode;
     }
