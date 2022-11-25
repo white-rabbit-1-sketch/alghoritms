@@ -10,6 +10,7 @@ namespace alg {
 
         if (this->lastNode) {
             this->lastNode->setNext(&node);
+            node.setPrevious(*this->lastNode);
         }
 
         this->lastNode = &node;

@@ -48,8 +48,8 @@ int main()
     }
 
     std::array<int,15> initialArray = {5, 1, 4, 2, 8, 5, 1, 4, 2, 8, 5, 1, 4, 2, 8};
-    std::array<int,15> bubbleSortedArray, shakeSortedArray;
-    bubbleSortedArray = shakeSortedArray = initialArray;
+    std::array<int,15> bubbleSortedArray, shakeSortedArray, quickSortedArray;
+    bubbleSortedArray = shakeSortedArray = quickSortedArray = initialArray;
     int iterationsCount = 0;
 
     cout << "Intitial array: ";
@@ -64,6 +64,11 @@ int main()
     iterationsCount = sort::shake(&shakeSortedArray[0], std::size(shakeSortedArray));
     cout << "Shake sorted array [itarationsCount=" << iterationsCount << "]: ";
     array_helper::print(&shakeSortedArray[0], std::size(shakeSortedArray));
+    cout << endl;
+
+    iterationsCount = sort::quick(&quickSortedArray[0], std::size(quickSortedArray));
+    cout << "Quick sorted array [itarationsCount=" << iterationsCount << "]: ";
+    array_helper::print(&quickSortedArray[0], std::size(quickSortedArray));
     cout << endl;
 
     return 0;

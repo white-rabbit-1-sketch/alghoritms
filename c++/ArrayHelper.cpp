@@ -13,3 +13,10 @@ void array_helper::print(int array[], int size)
         cout << array[i];
     }
 }
+
+void array_helper::swap(int array[], int firstIndex, int secondIndex)
+{
+    int temp = array[firstIndex];
+    array[firstIndex] = array[secondIndex];
+    array[secondIndex] = temp;
+}
