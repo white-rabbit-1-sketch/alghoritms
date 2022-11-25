@@ -1,8 +1,11 @@
 #include <iostream>
+#include <array>
 #include "LinkedList.hpp"
 #include "LinkedListNode.hpp"
 #include "DoublyLinkedList.hpp"
 #include "DoublyLinkedListNode.hpp"
+#include "Sort.hpp"
+#include "ArrayHelper.hpp"
 
 using namespace std;
 using namespace alg;
@@ -43,6 +46,25 @@ int main()
 
         currentDoublyLinkedListNode = currentDoublyLinkedListNode->getNext();
     }
+
+    std::array<int,15> initialArray = {5, 1, 4, 2, 8, 5, 1, 4, 2, 8, 5, 1, 4, 2, 8};
+    std::array<int,15> bubbleSortedArray, shakeSortedArray;
+    bubbleSortedArray = shakeSortedArray = initialArray;
+    int iterationsCount = 0;
+
+    cout << "Intitial array: ";
+    array_helper::print(&initialArray[0], std::size(initialArray));
+    cout << endl;
+
+    iterationsCount = sort::bubble(&bubbleSortedArray[0], std::size(bubbleSortedArray));
+    cout << "Buble sorted array [itarationsCount=" << iterationsCount << "]: ";
+    array_helper::print(&bubbleSortedArray[0], std::size(bubbleSortedArray));
+    cout << endl;
+
+    iterationsCount = sort::shake(&shakeSortedArray[0], std::size(shakeSortedArray));
+    cout << "Shake sorted array [itarationsCount=" << iterationsCount << "]: ";
+    array_helper::print(&shakeSortedArray[0], std::size(shakeSortedArray));
+    cout << endl;
 
     return 0;
 }
