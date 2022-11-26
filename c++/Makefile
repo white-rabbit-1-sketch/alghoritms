@@ -4,7 +4,7 @@ BUILD_DIR = ./build
 
 default: main
 
-main: main.o array_helper.o sort.o 
+main: main.o array_helper.o sort.o
 	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main $(BUILD_DIR)/array_helper.o $(BUILD_DIR)/sort.o $(BUILD_DIR)/main.o
 
 main.o:  main.cpp

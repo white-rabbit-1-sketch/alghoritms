@@ -6,6 +6,8 @@
 #include "DoublyLinkedListNode.hpp"
 #include "Sort.hpp"
 #include "ArrayHelper.hpp"
+#include "HashTableNode.hpp"
+#include "HashTable.hpp"
 
 using namespace std;
 using namespace alg;
@@ -70,6 +72,24 @@ int main()
     cout << "Quick sorted array [itarationsCount=" << iterationsCount << "]: ";
     array_helper::print(&quickSortedArray[0], std::size(quickSortedArray));
     cout << endl;
+
+    HashTable<int, 10> hashTable;
+
+    hashTable.set("test1", 4);
+    hashTable.set("test1", 5);
+    hashTable.set("test2", 10);
+    hashTable.set("test3", 15);
+
+    int hashTableNodeValue = 0; 
+
+    hashTable.get("test1", hashTableNodeValue);
+    cout << "Test1 value: " << hashTableNodeValue << endl;
+
+    hashTable.get("test2", hashTableNodeValue);
+    cout << "Test2 value: " << hashTableNodeValue << endl;
+
+    hashTable.get("test3", hashTableNodeValue);
+    cout << "Test3 value: " << hashTableNodeValue << endl;
 
     return 0;
 }
