@@ -62,17 +62,17 @@ int main()
     cout << endl;
 
     iterationsCount = sort::bubble(&bubbleSortedArray[0], std::size(bubbleSortedArray));
-    cout << "Buble sorted array [itarationsCount=" << iterationsCount << "]: ";
+    cout << "Buble sorted array [iterationsCount=" << iterationsCount << "]: ";
     array_helper::print(&bubbleSortedArray[0], std::size(bubbleSortedArray));
     cout << endl;
 
     iterationsCount = sort::shake(&shakeSortedArray[0], std::size(shakeSortedArray));
-    cout << "Shake sorted array [itarationsCount=" << iterationsCount << "]: ";
+    cout << "Shake sorted array [iterationsCount=" << iterationsCount << "]: ";
     array_helper::print(&shakeSortedArray[0], std::size(shakeSortedArray));
     cout << endl;
 
     iterationsCount = sort::quick(&quickSortedArray[0], std::size(quickSortedArray));
-    cout << "Quick sorted array [itarationsCount=" << iterationsCount << "]: ";
+    cout << "Quick sorted array [iterationsCount=" << iterationsCount << "]: ";
     array_helper::print(&quickSortedArray[0], std::size(quickSortedArray));
     cout << endl;
 
