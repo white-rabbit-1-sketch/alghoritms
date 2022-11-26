@@ -10,6 +10,7 @@
 #include "HashTable.hpp"
 #include "Queue.hpp"
 #include "DoublyQueue.hpp"
+#include "Search.hpp"
 
 using namespace std;
 using namespace alg;
@@ -123,6 +124,13 @@ int main()
 
     doublyQueue.popBack(queueValue);
     cout << "[DoublyQueue] Value 2 from back: " << queueValue << endl;
+
+    int searchArray[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int searchArrayIndex = -1;
+    iterationsCount = 0;
+
+    search::binary(searchArray, std::size(searchArray), 7, searchArrayIndex, iterationsCount);
+    cout << "[Search:Binary] Index of value: " << searchArrayIndex << ", Iterations count: " << iterationsCount << endl;
 
     return 0;
 }
