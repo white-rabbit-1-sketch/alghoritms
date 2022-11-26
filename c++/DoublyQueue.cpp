@@ -1,29 +1,18 @@
-#include "LinkedList.hpp"
+#include "DoublyQueue.hpp"
 
 namespace alg {
-    template <typename LinkedListNodeType>
-    void LinkedList<LinkedListNodeType>::append(LinkedListNode<LinkedListNodeType> &node)
+    template <typename ValueType>
+    bool DoublyQueue<ValueType>::popBack(ValueType &value)
     {
-        if (!this->firstNode) {
-            this->firstNode = &node;
+        bool result = false;
+
+        if (!this->data.empty()) {
+            value = this->data.back();
+            this->data.pop_back();
+
+            result = true;
         }
 
-        if (this->lastNode) {
-            this->lastNode->setNext(&node);
-        }
-
-        this->lastNode = &node;
-    }
-
-    template <typename LinkedListNodeType>
-    LinkedListNode<LinkedListNodeType> *LinkedList<LinkedListNodeType>::getFirstNode() const
-    {
-        return this->firstNode;
-    }
-
-    template <typename LinkedListNodeType>
-    LinkedListNode<LinkedListNodeType> *LinkedList<LinkedListNodeType>::getLastNode() const
-    {
-        return this->lastNode;
+        return result;
     }
 }

@@ -9,6 +9,7 @@
 #include "HashTableNode.hpp"
 #include "HashTable.hpp"
 #include "Queue.hpp"
+#include "DoublyQueue.hpp"
 
 using namespace std;
 using namespace alg;
@@ -108,6 +109,20 @@ int main()
     queue.pop(queueValue);
     cout << "[Queue] Value 3: " << queueValue << endl;
 
+    DoublyQueue<string> doublyQueue;
+
+    doublyQueue.push(queueValue = "test value 1");
+    doublyQueue.push(queueValue = "test value 2");
+    doublyQueue.push(queueValue = "test value 3");
+
+    doublyQueue.popBack(queueValue);
+    cout << "[DoublyQueue] Value 3 from back: " << queueValue << endl;
+
+    doublyQueue.pop(queueValue);
+    cout << "[DoublyQueue] Value 1 from front: " << queueValue << endl;
+
+    doublyQueue.popBack(queueValue);
+    cout << "[DoublyQueue] Value 2 from back: " << queueValue << endl;
 
     return 0;
 }

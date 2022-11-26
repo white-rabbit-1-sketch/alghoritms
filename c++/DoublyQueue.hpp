@@ -1,17 +1,20 @@
 #ifndef DOUBLY_QUEUE_H
 #define DOUBLY_QUEUE_H
 
+#include <vector>
+#include "Queue.hpp"
+
+using namespace std;
+
 namespace alg {
     template <typename ValueType>
-    class DoublyQueue {
-        protected:
-            
-
+    class DoublyQueue: public Queue<ValueType>
+    {
         public:
-            virtual void append(LinkedListNode<LinkedListNodeType> &node);
-            virtual LinkedListNode<LinkedListNodeType> *getFirstNode() const;
-            virtual LinkedListNode<LinkedListNodeType> *getLastNode() const;
+            bool popBack(ValueType &value);
     };
 }
+
+#include "DoublyQueue.cpp"
 
 #endif

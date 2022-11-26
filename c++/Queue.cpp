@@ -15,6 +15,8 @@ namespace alg {
         if (!this->data.empty()) {
             value = this->data[0];
             this->data.erase(this->data.begin());
+
+            result = true;
         }
 
         return result;
