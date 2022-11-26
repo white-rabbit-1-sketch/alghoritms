@@ -8,6 +8,7 @@
 #include "ArrayHelper.hpp"
 #include "HashTableNode.hpp"
 #include "HashTable.hpp"
+#include "Queue.hpp"
 
 using namespace std;
 using namespace alg;
@@ -83,13 +84,30 @@ int main()
     int hashTableNodeValue = 0; 
 
     hashTable.get("test1", hashTableNodeValue);
-    cout << "Test1 value: " << hashTableNodeValue << endl;
+    cout << "[HashTable] Test1 value: " << hashTableNodeValue << endl;
 
     hashTable.get("test2", hashTableNodeValue);
-    cout << "Test2 value: " << hashTableNodeValue << endl;
+    cout << "[HashTable] Test2 value: " << hashTableNodeValue << endl;
 
     hashTable.get("test3", hashTableNodeValue);
-    cout << "Test3 value: " << hashTableNodeValue << endl;
+    cout << "[HashTable] Test3 value: " << hashTableNodeValue << endl;
+
+    Queue<string> queue;
+    string queueValue;
+
+    queue.push(queueValue = "test value 1");
+    queue.push(queueValue = "test value 2");
+    queue.push(queueValue = "test value 3");
+
+    queue.pop(queueValue);
+    cout << "[Queue] Value 1: " << queueValue << endl;
+
+    queue.pop(queueValue);
+    cout << "[Queue] Value 2: " << queueValue << endl;
+
+    queue.pop(queueValue);
+    cout << "[Queue] Value 3: " << queueValue << endl;
+
 
     return 0;
 }
