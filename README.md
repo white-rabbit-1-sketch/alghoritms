@@ -16,3 +16,6 @@
 - IPC System V Shared memory storage (ShmStorage.hpp)
 
 И другие.
+
+
+Сборка и запуск проекта: make && ./build/main
