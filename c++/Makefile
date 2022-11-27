@@ -4,8 +4,8 @@ BUILD_DIR = ./build
 
 default: main
 
-main: main.o array_helper.o sort.o search.o data_provider.o data_provider_logger_decorator.o
-	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main $(BUILD_DIR)/data_provider.o $(BUILD_DIR)/data_provider_logger_decorator.o $(BUILD_DIR)/search.o $(BUILD_DIR)/array_helper.o $(BUILD_DIR)/sort.o $(BUILD_DIR)/main.o
+main: main.o array_helper.o sort.o search.o data_provider.o data_provider_logger_decorator.o singleton.o
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main $(BUILD_DIR)/singleton.o $(BUILD_DIR)/data_provider.o $(BUILD_DIR)/data_provider_logger_decorator.o $(BUILD_DIR)/search.o $(BUILD_DIR)/array_helper.o $(BUILD_DIR)/sort.o $(BUILD_DIR)/main.o
 
 main.o:  main.cpp
 	$(CC) $(CFLAGS) -c main.cpp -o $(BUILD_DIR)/main.o
@@ -24,6 +24,9 @@ data_provider_logger_decorator.o: DataProviderLoggerDecorator.cpp
 
 data_provider.o: DataProvider.cpp
 	$(CC) $(CFLAGS) -c DataProvider.cpp -o $(BUILD_DIR)/data_provider.o
+
+singleton.o: Singleton.cpp
+	$(CC) $(CFLAGS) -c Singleton.cpp -o $(BUILD_DIR)/singleton.o
 
 clean: 
 	$(RM) /build/*

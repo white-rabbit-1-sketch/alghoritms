@@ -14,6 +14,7 @@
 #include "Stack.hpp"
 #include "DataProvider.hpp"
 #include "DataProviderLoggerDecorator.hpp"
+#include "Singleton.hpp"
 
 using namespace std;
 using namespace alg;
@@ -157,5 +158,10 @@ int main()
     cout << "[DataProvider] Value: " << dataProvider.getRandomValue() << endl;
     cout << "[DataProviderLoggerDecorator] Value: " << dataProviderLoggerDecorator.getRandomValue() << endl;
 
+    Singleton &singleton1 = Singleton::getInstance();
+    Singleton &singleton2 = Singleton::getInstance();
+    cout << "Singleton 1 address: " << &singleton1 << endl;
+    cout << "Singleton 2 address: " << &singleton2 << endl;
+    
     return 0;
 }

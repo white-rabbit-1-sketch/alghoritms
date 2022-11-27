@@ -5,7 +5,10 @@
 using namespace std;
 
 namespace alg {
-    DataProviderLoggerDecorator::DataProviderLoggerDecorator(DataProviderInterface &dataProvider) : dataProvider{dataProvider} {}
+    DataProviderLoggerDecorator::DataProviderLoggerDecorator(DataProviderInterface &dataProvider) : dataProvider{dataProvider} 
+    {
+        
+    }
 
     int DataProviderLoggerDecorator::getRandomValue()
     {
