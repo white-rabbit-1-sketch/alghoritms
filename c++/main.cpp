@@ -11,6 +11,7 @@
 #include "Queue.hpp"
 #include "DoublyQueue.hpp"
 #include "Search.hpp"
+#include "Stack.hpp"
 
 using namespace std;
 using namespace alg;
@@ -131,6 +132,22 @@ int main()
 
     search::binary(searchArray, std::size(searchArray), 7, searchArrayIndex, iterationsCount);
     cout << "[Search:Binary] Index of value: " << searchArrayIndex << ", Iterations count: " << iterationsCount << endl;
+
+    Stack<string> stack;
+    string stackValue;
+
+    stack.push(stackValue = "test value 1");
+    stack.push(stackValue = "test value 2");
+    stack.push(stackValue = "test value 3");
+
+    stack.pop(stackValue);
+    cout << "[Stack] Value 3: " << stackValue << endl;
+
+    stack.pop(stackValue);
+    cout << "[Stack] Value 2: " << stackValue << endl;
+
+    stack.pop(stackValue);
+    cout << "[Stack] Value 1: " << stackValue << endl;
 
     return 0;
 }
