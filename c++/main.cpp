@@ -12,6 +12,8 @@
 #include "DoublyQueue.hpp"
 #include "Search.hpp"
 #include "Stack.hpp"
+#include "DataProvider.hpp"
+#include "DataProviderLoggerDecorator.hpp"
 
 using namespace std;
 using namespace alg;
@@ -148,6 +150,12 @@ int main()
 
     stack.pop(stackValue);
     cout << "[Stack] Value 1: " << stackValue << endl;
+
+    DataProvider dataProvider;
+    DataProviderLoggerDecorator dataProviderLoggerDecorator = DataProviderLoggerDecorator(dataProvider);
+
+    cout << "[DataProvider] Value: " << dataProvider.getRandomValue() << endl;
+    cout << "[DataProviderLoggerDecorator] Value: " << dataProviderLoggerDecorator.getRandomValue() << endl;
 
     return 0;
 }
