@@ -15,6 +15,7 @@
 #include "DataProvider.hpp"
 #include "DataProviderLoggerDecorator.hpp"
 #include "Singleton.hpp"
+#include "ShmStorage.hpp"
 
 using namespace std;
 using namespace alg;
@@ -160,8 +161,19 @@ int main()
 
     Singleton &singleton1 = Singleton::getInstance();
     Singleton &singleton2 = Singleton::getInstance();
-    cout << "Singleton 1 address: " << &singleton1 << endl;
-    cout << "Singleton 2 address: " << &singleton2 << endl;
+    cout << "[Singleton] 1 address: " << &singleton1 << endl;
+    cout << "[Singleton] 2 address: " << &singleton2 << endl;
+
+    ShmStorage shmStorage;
+    string shmStorageValue;
+
+    shmStorage.set("key1", "value1");
+    shmStorage.set("key2", "value2");
+
+    shmStorage.get("key1", shmStorageValue);
+    cout << "[ShmStorage] value by key1: " << shmStorageValue << endl;
+    shmStorage.get("key2", shmStorageValue);
+    cout << "[ShmStorage] value by key2: " << shmStorageValue << endl;
     
     return 0;
 }

@@ -13,5 +13,6 @@
 - двусвязанный список
 - декоратор (пример с добавлением логирования: DataProviderLoggerDecorator.hpp)
 - синглтон
+- IPC System V Shared memory storage (ShmStorage.hpp)
 
 И другие.
