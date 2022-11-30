@@ -14,6 +14,7 @@
 - декоратор (пример с добавлением логирования: DataProviderLoggerDecorator.hpp)
 - синглтон
 - IPC System V Shared memory storage (ShmStorage.hpp)
+- Multithreading (ThreadPool.cpp)
 
 И другие.
 

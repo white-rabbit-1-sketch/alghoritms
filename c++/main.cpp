@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include <chrono>
 #include "LinkedList.hpp"
 #include "LinkedListNode.hpp"
 #include "DoublyLinkedList.hpp"
@@ -16,6 +17,7 @@
 #include "DataProviderLoggerDecorator.hpp"
 #include "Singleton.hpp"
 #include "ShmStorage.hpp"
+#include "ThreadPool.hpp"
 
 using namespace std;
 using namespace alg;
@@ -174,6 +176,21 @@ int main()
     cout << "[ShmStorage] value by key1: " << shmStorageValue << endl;
     shmStorage.get("key2", shmStorageValue);
     cout << "[ShmStorage] value by key2: " << shmStorageValue << endl;
+
+    /****************multithreading start*************/
+    ThreadPool threadPool;
+
+    for (int i = 0; i < 50; i++) {
+        threadPool.addTask([i]() {
+            cout << "Thread task " << i << " processd" << endl;
+        });
+    }
+
+    threadPool.start();
+    while (threadPool.busy()) {}
+    threadPool.stop();
+
+    /****************multithreading end***************/
     
     return 0;
 }

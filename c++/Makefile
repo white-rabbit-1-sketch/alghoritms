@@ -1,11 +1,11 @@
 CC = g++
-CFLAGS  = -g -Wall -std=c++17
+CFLAGS  = -g -Wall -std=c++17 -pthread
 BUILD_DIR = ./build
 
 default: main
 
-main: main.o array_helper.o sort.o search.o data_provider.o data_provider_logger_decorator.o singleton.o shm_storage.o
-	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main $(BUILD_DIR)/shm_storage.o $(BUILD_DIR)/singleton.o $(BUILD_DIR)/data_provider.o $(BUILD_DIR)/data_provider_logger_decorator.o $(BUILD_DIR)/search.o $(BUILD_DIR)/array_helper.o $(BUILD_DIR)/sort.o $(BUILD_DIR)/main.o
+main: main.o array_helper.o sort.o search.o data_provider.o data_provider_logger_decorator.o singleton.o shm_storage.o thread_pool.o
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main $(BUILD_DIR)/thread_pool.o $(BUILD_DIR)/shm_storage.o $(BUILD_DIR)/singleton.o $(BUILD_DIR)/data_provider.o $(BUILD_DIR)/data_provider_logger_decorator.o $(BUILD_DIR)/search.o $(BUILD_DIR)/array_helper.o $(BUILD_DIR)/sort.o $(BUILD_DIR)/main.o
 
 main.o:  main.cpp
 	$(CC) $(CFLAGS) -c main.cpp -o $(BUILD_DIR)/main.o
@@ -30,6 +30,9 @@ singleton.o: Singleton.cpp
 
 shm_storage.o: ShmStorage.cpp
 	$(CC) $(CFLAGS) -c ShmStorage.cpp -o $(BUILD_DIR)/shm_storage.o
+
+thread_pool.o: ThreadPool.cpp
+	$(CC) $(CFLAGS) -c ThreadPool.cpp -o $(BUILD_DIR)/thread_pool.o
 
 clean: 
 	$(RM) /build/*
