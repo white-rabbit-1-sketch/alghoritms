@@ -18,6 +18,8 @@
 #include "Singleton.hpp"
 #include "ShmStorage.hpp"
 #include "ThreadPool.hpp"
+#include "BinaryTreeNode.hpp"
+#include "BinaryTree.hpp"
 
 using namespace std;
 using namespace alg;
@@ -191,6 +193,20 @@ int main()
     threadPool.stop();
 
     /****************multithreading end***************/
+
+    BinaryTree binaryTree;
+
+    binaryTree.push(5);
+    binaryTree.push(6);
+    binaryTree.push(3);
+    binaryTree.push(2);
+    binaryTree.push(4);
+    binaryTree.push(8);
+    binaryTree.push(10);
+    binaryTree.push(1);
+
+    BinaryTreeNode *binaryTreeNode = binaryTree.getNodeByValue(8, iterationsCount);
+    cout << "[BinaryTree, iterationsCount=" << iterationsCount << "] Value 2: " << binaryTreeNode->getValue() << endl;
     
     return 0;
 }

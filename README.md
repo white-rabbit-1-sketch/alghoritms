@@ -15,6 +15,7 @@
 - синглтон
 - IPC System V Shared memory storage (ShmStorage.hpp)
 - Multithreading (ThreadPool.cpp)
+- Двоичное дерево поиска / Бинарное дерево (несбалансированное)
 
 И другие.
 

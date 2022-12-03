@@ -4,8 +4,8 @@ BUILD_DIR = ./build
 
 default: main
 
-main: main.o array_helper.o sort.o search.o data_provider.o data_provider_logger_decorator.o singleton.o shm_storage.o thread_pool.o
-	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main $(BUILD_DIR)/thread_pool.o $(BUILD_DIR)/shm_storage.o $(BUILD_DIR)/singleton.o $(BUILD_DIR)/data_provider.o $(BUILD_DIR)/data_provider_logger_decorator.o $(BUILD_DIR)/search.o $(BUILD_DIR)/array_helper.o $(BUILD_DIR)/sort.o $(BUILD_DIR)/main.o
+main: main.o array_helper.o sort.o search.o data_provider.o data_provider_logger_decorator.o singleton.o shm_storage.o thread_pool.o binary_tree.o binary_tree_node.o
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/main $(BUILD_DIR)/binary_tree_node.o $(BUILD_DIR)/binary_tree.o $(BUILD_DIR)/thread_pool.o $(BUILD_DIR)/shm_storage.o $(BUILD_DIR)/singleton.o $(BUILD_DIR)/data_provider.o $(BUILD_DIR)/data_provider_logger_decorator.o $(BUILD_DIR)/search.o $(BUILD_DIR)/array_helper.o $(BUILD_DIR)/sort.o $(BUILD_DIR)/main.o
 
 main.o:  main.cpp
 	$(CC) $(CFLAGS) -c main.cpp -o $(BUILD_DIR)/main.o
@@ -33,6 +33,12 @@ shm_storage.o: ShmStorage.cpp
 
 thread_pool.o: ThreadPool.cpp
 	$(CC) $(CFLAGS) -c ThreadPool.cpp -o $(BUILD_DIR)/thread_pool.o
+
+binary_tree.o: BinaryTree.cpp
+	$(CC) $(CFLAGS) -c BinaryTree.cpp -o $(BUILD_DIR)/binary_tree.o
+
+binary_tree_node.o: BinaryTreeNode.cpp
+	$(CC) $(CFLAGS) -c BinaryTreeNode.cpp -o $(BUILD_DIR)/binary_tree_node.o
 
 clean: 
 	$(RM) /build/*
