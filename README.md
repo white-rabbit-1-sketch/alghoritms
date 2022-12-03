@@ -16,7 +16,7 @@
 - IPC System V Shared memory storage (ShmStorage.hpp)
 - Multithreading (ThreadPool.cpp)
 - Двоичное дерево поиска / Бинарное дерево (несбалансированное)
-- Echo TCP/IP server
+- Echo TCP/IP server (blocking-synchronous mode, just for example of sockets)
 
 И другие.
 
