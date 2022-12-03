@@ -1,6 +1,7 @@
 #include <iostream>
 #include <array>
 #include <chrono>
+#include <thread>
 #include "LinkedList.hpp"
 #include "LinkedListNode.hpp"
 #include "DoublyLinkedList.hpp"
@@ -20,6 +21,7 @@
 #include "ThreadPool.hpp"
 #include "BinaryTreeNode.hpp"
 #include "BinaryTree.hpp"
+#include "EchoServer.hpp"
 
 using namespace std;
 using namespace alg;
@@ -207,6 +209,9 @@ int main()
 
     BinaryTreeNode *binaryTreeNode = binaryTree.getNodeByValue(8, iterationsCount);
     cout << "[BinaryTree, iterationsCount=" << iterationsCount << "] Value 2: " << binaryTreeNode->getValue() << endl;
-    
+
+    EchoServer echoServer;
+    echoServer.start(15000);
+
     return 0;
 }
