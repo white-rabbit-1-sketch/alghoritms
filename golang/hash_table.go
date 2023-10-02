@@ -10,15 +10,15 @@ func NewHashTable(size int) *HashTable {
 	}
 }
 
-func (s HashTable) Set(key string, value interface{}) {
+func (s *HashTable) Set(key string, value interface{}) {
 	s.data[s.getIndexByKey(key)] = value
 }
 
-func (s HashTable) Get(key string) interface{} {
+func (s *HashTable) Get(key string) interface{} {
 	return s.data[s.getIndexByKey(key)]
 }
 
-func (s HashTable) getIndexByKey(key string) int {
+func (s *HashTable) getIndexByKey(key string) int {
 	i := 0
 	for _, char := range key {
 		i += int(char)
